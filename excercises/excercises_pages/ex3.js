@@ -1,5 +1,6 @@
+// Exercise 3 
 function checkNumIsEven() {
-    num = document.getElementById('number').value;
+    let num = document.getElementById('number').value;
     if (num % 2 == 0) {
         document.getElementById('result').innerHTML = 'The number is even';
     } else {
@@ -7,5 +8,6 @@ function checkNumIsEven() {
     }    
 }
 
-checkButton = document.getElementById('check');
+let checkButton = document.getElementById('check');
 checkButton.addEventListener('click', checkNumIsEven);
+
