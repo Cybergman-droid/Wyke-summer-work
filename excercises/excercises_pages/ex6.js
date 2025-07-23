@@ -8,7 +8,8 @@ function checkPassword() {
     do {
         if (userGuess == password) {
             result.value = "Correct!";
-        } else {
+        } 
+        else {
             result.value = "Incorrect!";
         }
     }
