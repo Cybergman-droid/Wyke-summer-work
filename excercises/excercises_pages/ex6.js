@@ -3,17 +3,29 @@ let input = document.getElementById("guess");
 let checkButton = document.getElementById("check");
 let result = document.getElementById("result");
 
+let isPasswordCorrect = false;
+
 function checkPassword() {
-    let userGuess = input.value;
     do {
-        if (userGuess == password) {
-            result.value = "Correct!";
-        } 
-        else {
-            result.value = "Incorrect!";
+        let userInput = input.value;
+        
+        if (userInput === password) {
+            result.textContent = "Correct password! Access granted.";
+            isPasswordCorrect = true;
+            return;
+        } else {
+            result.textContent = "Incorrect password. Try again.";
+            input.value = "";
+            input.focus();
+            return;
         }
-    }
-    while (userGuess != password);
+    } while (!isPasswordCorrect);
 }
 
 checkButton.addEventListener("click", checkPassword);
+
+input.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        checkPassword();
+    }
+});
