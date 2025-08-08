@@ -28,11 +28,10 @@ function isPrime() {
         }
     }
     
-    // If we get here, the number is prime
+
     outputField.innerHTML = 'prime';
 }
 
-// Fixed: Pass the function reference, don't call it
 submitButton.addEventListener('click', isPrime);
 
 inputField.addEventListener('keypress', function(event) {
